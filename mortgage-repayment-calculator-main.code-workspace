@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "../../Downloads/mortgage-repayment-calculator-main"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "mortage calculator app",
+		"liveServer.settings.port": 5502
+	}
+}

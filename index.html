@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="./style.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <title>mortage calculator</title>
+</head>
+<body>
+    <main>
+        <section class="container-1">
+             <div id="mortage-calcultor">
+                <h3>Mortgage Calculator</h3>
+                <p>clear All</p>
+             </div>
+                  <div class="mortage-amount">
+                      <p>Mortgage Amount</p>
+                        <div class="input-style">
+                            <div class="input-style-1">
+                                <span>$</span>
+                           </div>
+                            <div class="input-style-2">
+                                <input type="text" placeholder="000,000">
+                            </div>
+                       </div>
+                 </div>
+              
+                 <div class="mortage-team-flex">
+                    <div class="inner-mortage-team-flex">
+                        <p>Mortgage Team</p>
+                           <div class="mortage-team-input-style">
+                               <div class="mortage-team-input-style-1">
+                                    <input type="text" placeholder="0000">
+                               </div>
+                                <div class="mortage-team-input-style-2">
+                                     <span>years</span>
+                               </div> 
+                         </div>
+                    </div>
+                    <div class="inner-mortage-team-flex-2">
+                        <p> intrest Rate</p>
+                        <div class="inner-mortage-team-input-style">
+                              <div class="inner-mortage-team-input-style-1">
+                                  <input type="text" placeholder="0.00">
+                            </div>
+                               <div class="inner-mortage-team-input-style-2">
+                                   <span>%</span>
+                              </div>
+                        </div>
+                      </div>
+                </div>
+                 <div class="Mortgage-type">
+                      <p>Mortgage Type</p>
+                       <div class="mortage-radio-style">
+                         <input type="radio" name="Mortgage" value="Repayment">
+                         <label for="">Repayment</label>
+                      </div>
+                      <div class="mortage-radio-style">
+                        <input type="radio" name="Mortgage" value="interest">
+                        <label for="">Interest Only</label>
+                      </div>
+                 </div>
+
+
+                 <button onclick="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" fill="none" viewBox="0 0 24 24">
+                        <path fill="#133041" d="M18.75 2.25H5.25a1.5 1.5 0 0 0-1.5 1.5v16.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5V3.75a1.5 1.5 0 0 0-1.5-1.5Zm-10.5 16.5a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25Zm0-3.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25ZM12 18.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25ZM12 15a1.125 1.125 0 1 1 0-2.25A1.125 1.125 0 0 1 12 15Zm3.75 3.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25Zm0-3.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25Zm1.5-5.25a.75.75 0 0 1-.75.75h-9a.75.75 0 0 1-.75-.75V6a.75.75 0 0 1 .75-.75h9a.75.75 0 0 1 .75.75v3.75Z"/></svg>
+                    Calculate Repayment</button>
+
+
+                      
+        </section>
+        <section class="container-2">
+            <div class="text-container">
+           <h4> Your results</h4>
+                 <p>  Your results are shown below based on the information you provided. 
+                      To adjust the results, edit the form and click “calculate repayments” again.
+                </p>
+            </div>
+                   <div class="result-container">
+                      <p class="monthly"> Your monthly repayments</p> 
+                            <div class="result">
+                                <h2>$1,797.94</h2>
+                            </div>
+                      <p class="Total">Total you'll repay over the term</p>
+              
+                              <div class="yearly-result">
+                                     <p>$539,322.94</p>
+                             </div>
+         </div>
+         
+        </section>
+    </main>
+</body>
+</html>
+
