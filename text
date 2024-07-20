@@ -1,32 +1,46 @@
-// Function to calculate monthly mortgage payment
-function mortgageCal() {
-    // Get the values from the input fields and convert them to numbers
-    let principal = parseFloat(document.querySelector(".input-style-2 input").value.replace(/,/g, ''));
+document.addEventListener("DOMContentLoaded", () => {
+    let validInput = document.querySelector(".valid-input");
+    let goBack = document.querySelector("#goBack");
+  
+    goBack.addEventListener("click", () => {
+      validInput.style.display = "none";
+    });
+  });
+  
+  function mortgageCal() {
+    let principal = parseFloat(document.querySelector(".input-style-2 input").value.replace(/,/g, ""));
     let loanTerm = parseFloat(document.querySelector(".mortage-team-input-style-1 input").value);
-    let annualInterest = parseFloat(document.querySelector(".inner-mortage-team-input-style input").value);
-    
-    // Convert annual interest rate to a monthly interest rate
+    let annualInterest = parseFloat(document.querySelector(".inner-mortage-team-input-style-1 input").value);
+    let mortgageType = document.querySelector('input[name="Mortgage"]:checked').value;
+    let monthlyMortgagePayment;
+    let validInput = document.querySelector(".valid-input");
+    let monthlyRepayment = document.querySelector(".result h2");
+    let totalRepayment = document.querySelector(".yearly-result p");
     let monthlyInterest = annualInterest / 12 / 100;
-    
-    // Convert loan term in years to the number of monthly payments
-    let numberOfPayments = loanTerm * 12;
-    
-    // Calculate the monthly payment using the formula for an annuity
-    let monthlyPayment = (principal * monthlyInterest) / (1 - Math.pow((1 + monthlyInterest), -numberOfPayments));
-    
-    // Round the result to 2 decimal places for better readability
-    monthlyPayment = monthlyPayment.toFixed(2);
-    
-    // Calculate the total amount paid over the term of the mortgage
-    let totalPayment = (monthlyPayment * numberOfPayments).toFixed(2);
-    
-    // Display the results in the corresponding elements in the HTML
-    document.querySelector('.result h2').innerText = `$${monthlyPayment}`;
-    document.querySelector('.yearly-result p').innerText = `$${totalPayment}`;
-    
-    // Log the monthly interest rate to the console (for debugging purposes)
-    console.log(monthlyInterest);
-}
-
-// Add an event listener to the button to trigger the calculation when clicked
-document.querySelector('button').addEventListener('click', mortgageCal);
+    let totalPayments = loanTerm * 12;
+  
+    if (isNaN(principal) || isNaN(loanTerm) || isNaN(annualInterest)) {
+      validInput.style.display = "flex";
+      return; // Exit the function early if inputs are invalid
+    } else {
+      validInput.style.display = "none";
+    }
+  
+    if (mortgageType === "Repayment") {
+      // Calculate the monthly mortgage payment for a repayment mortgage
+      monthlyMortgagePayment = (principal * monthlyInterest) / (1 - Math.pow(1 + monthlyInterest, -totalPayments));
+    } else if (mortgageType === "Interest") {
+      // Calculate the monthly payment for an interest-only mortgage
+      monthlyMortgagePayment = principal * monthlyInterest;
+    }
+  
+    monthlyMortgagePayment = monthlyMortgagePayment.toFixed(2); // Round to two decimal places
+    let totalAmountPaid = (monthlyMortgagePayment * totalPayments).toFixed(2);
+  
+    monthlyRepayment.textContent = "$" + monthlyMortgagePayment;
+    totalRepayment.textContent = "$" + totalAmountPaid;
+  
+    console.log("Monthly Mortgage Payment:", monthlyMortgagePayment);
+    console.log("Total Amount Paid:", totalAmountPaid);
+  }
+  

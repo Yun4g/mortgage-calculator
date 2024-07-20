@@ -1,34 +1,53 @@
-document.addEventListener('DOMContentLoaded', () => {
-    let validInput = document.querySelector(".valid-input");
-    let goBack = document.querySelector('#goBack');
 
-      goBack.addEventListener('click', ()=> {
-          validInput.style.display = 'none';
-      });
+document.addEventListener('DOMContentLoaded', () =>{
+    validInput = document.querySelector(".valid-input");
+
+    goBack.addEventListener('click',  () =>{
+           validInput.style.display = 'none';
+    });
  });
 
 function mortgageCal(){
-    let principal = parseFloat(document.querySelector(".input-style-2 input").value.replace(/,/g, ''));
-    let loanTerm =  parseFloat(document.querySelector(".mortage-team-input-style-1 input").value);
-    let annualIntrest = parseFloat(document.querySelector(".inner-mortage-team-input-style-1 input").value);
-    let validInput = document.querySelector(".valid-input");
-    let monthlyRepayment = document.querySelector('.result h2' );
-    let monthlyIntrest = annualIntrest/12/100;
-    let monthlyLoanTerm = loanTerm * 12 ;
-   
-    if(isNaN(principal) || isNaN(loanTerm) || isNaN(annualIntrest)){
-        validInput.style.display = 'flex';
-  } else{
-     validInput.style.display = 'none';
-  }
+let mortgageAmount = parseFloat(document.querySelector(".input-style-2 input").value.replace(/,/g, ""));
+// console.log(mortgageAmount)
+
+let mortgageYears = parseFloat(document.querySelector(".mortage-team-input-style-1 input").value);
+// console.log(mortgageYears);
+
+let mortgageIntrest = parseFloat(document.querySelector(".inner-mortage-team-input-style-1 input").value);
+// console.log(mortgageIntrest)
+
+let mortgageType = document.querySelector('input[name="Mortgage"]:checked').value;
+let validInput = document.querySelector(".valid-input");
 
 
-    // Calculate the monthly payment using the formula for an annuity
+let monthlyInterest = mortgageIntrest / 12 / 100;
+let totalPayments = mortgageYears * 12;
 
-     let monthlyMortagePayment = principal * monthlyIntrest /  1 - Math.pow((1 + monthlyIntrest), -monthlyLoanTerm )
-        monthlyMortagePayment =  monthlyMortagePayment.toFixed(2);
-       monthlyRepayment.textContent ='$' + monthlyMortagePayment;
-      console.log('$' + monthlyMortagePayment);
-      // Calculate the total amount paid over the term of the mortgage
-}   
- 
+let goBack = document.querySelector("#goBack")
+
+let  monthlyMortgagePayment;
+let monthlyPayment = document.querySelector(".result h2");
+console.log(monthlyPayment);
+
+
+    if(isNaN(mortgageAmount) || isNaN(mortgageYears) || isNaN(mortgageIntrest)){
+         validInput.style.display = "flex";
+       
+    } 
+     else{
+         validInput.style.display = "none";
+     }
+    
+    
+     if (mortgageType === "Repayment") {
+        // Calculate the monthly mortgage payment for a repayment mortgage
+        monthlyMortgagePayment = (mortgageAmount * monthlyInterest) / (1 - Math.pow(1 + monthlyInterest, -totalPayments));
+      } else if (mortgageType === "Interest") {
+        // Calculate the monthly payment for an interest-only mortgage
+        monthlyMortgagePayment = mortgageAmount * monthlyInterest;
+      }
+     monthlyMortgagePayment = monthlyMortgagePayment.toFixed(2);
+     monthlyPayment.textContent = "$"+ monthlyMortgagePayment;
+
+}
