@@ -1,13 +1,13 @@
 
-document.addEventListener('DOMContentLoaded', () =>{
-    validInput = document.querySelector(".valid-input");
+// document.addEventListener('DOMContentLoaded', () =>{
+//      validInput = document.querySelector(".valid-input");
+//        let goBack = document.querySelector("#goBack")
+//     goBack.addEventListener('click',  () =>{
+//            validInput.style.display = 'none';
+//     });
+//   });
 
-    goBack.addEventListener('click',  () =>{
-           validInput.style.display = 'none';
-    });
- });
-
-function mortgageCal(){
+function mortgageCal(goBack){
 let mortgageAmount = parseFloat(document.querySelector(".input-style-2 input").value.replace(/,/g, ""));
 // console.log(mortgageAmount)
 
@@ -18,16 +18,20 @@ let mortgageIntrest = parseFloat(document.querySelector(".inner-mortage-team-inp
 // console.log(mortgageIntrest)
 
 let mortgageType = document.querySelector('input[name="Mortgage"]:checked').value;
-let validInput = document.querySelector(".valid-input");
+let validInput = document.querySelector("#valid");
+
 
 
 let monthlyInterest = mortgageIntrest / 12 / 100;
 let totalPayments = mortgageYears * 12;
 
-let goBack = document.querySelector("#goBack")
+
 
 let  monthlyMortgagePayment;
+let yearlymortgagePayment;
 let monthlyPayment = document.querySelector(".result h2");
+let yearlyPayment = document.querySelector(".yearly-result p");
+let totalAmountPaid = mortgageYears * 12;
 console.log(monthlyPayment);
 
 
@@ -48,6 +52,10 @@ console.log(monthlyPayment);
         monthlyMortgagePayment = mortgageAmount * monthlyInterest;
       }
      monthlyMortgagePayment = monthlyMortgagePayment.toFixed(2);
+     yearlymortgagePayment = monthlyMortgagePayment * totalAmountPaid.toFixed(2);
+
      monthlyPayment.textContent = "$"+ monthlyMortgagePayment;
+     yearlyPayment.textContent = "$" + yearlymortgagePayment;
 
 }
+

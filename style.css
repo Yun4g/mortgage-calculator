@@ -47,12 +47,13 @@ main{
     font-weight: 900;
     color: hsl(202, 55%, 16%);
 }
-#mortage-calcultor p{
+#mortage-calcultor #clear{
     font-size: 14px;
     font-weight: 600;
     color: hsl(200, 26%, 54%);
     border-bottom: 2px solid hsl(201, 57%, 75%);
     margin-right: 15px;
+    cursor: pointer;
 }
 
 
@@ -215,9 +216,7 @@ main{
     cursor: pointer;
 
 }
-.mortage-radio-style input:checked ~ .checkmark{
-    background-color:hsl(61, 70%, 52%) ;
-}
+
 
 
 .mortage-radio-style label{
@@ -245,7 +244,7 @@ button{
     cursor: pointer;
 }
 
-.valid-input{
+#valid{
   position: absolute;
   top: 0;
   left: 0;
@@ -299,7 +298,7 @@ button{
 
 .result-container{
     margin-top: 2rem;
-    border: 2px solid;
+    border: none;
     box-shadow: 3px 5px hsl(61, 70%, 52%);
     width: 85%;
     height: 35vh;
