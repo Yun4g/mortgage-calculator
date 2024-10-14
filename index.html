@@ -15,6 +15,7 @@
              <div id="mortage-calcultor">
                 <h3>Mortgage Calculator</h3>
                 <p onclick="clear()" id="clear"> clear</p>
+
              </div>
                   <div class="mortage-amount">
                       <p>Mortgage Amount</p>
@@ -33,7 +34,7 @@
                         <p>Mortgage Term</p>
                            <div class="mortage-team-input-style">
                                <div class="mortage-team-input-style-1">
-                                    <input type="text" placeholder="0000">
+                                    <input type="text" placeholder="00">
                                </div>
                                 <div class="mortage-team-input-style-2">
                                      <span>years</span>
@@ -65,15 +66,18 @@
                  </div>
 
 
-                 <button onclick="mortgageCal()">
+                 <button class="butcal" onclick="mortgageCal()">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" fill="none" viewBox="0 0 24 24">
                         <path fill="#133041" d="M18.75 2.25H5.25a1.5 1.5 0 0 0-1.5 1.5v16.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5V3.75a1.5 1.5 0 0 0-1.5-1.5Zm-10.5 16.5a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25Zm0-3.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25ZM12 18.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25ZM12 15a1.125 1.125 0 1 1 0-2.25A1.125 1.125 0 0 1 12 15Zm3.75 3.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25Zm0-3.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25Zm1.5-5.25a.75.75 0 0 1-.75.75h-9a.75.75 0 0 1-.75-.75V6a.75.75 0 0 1 .75-.75h9a.75.75 0 0 1 .75.75v3.75Z"/></svg>
-                    Calculate Repayment</button> 
-
+                    Calculate Repayment
+                </button> 
+                          <div class="modal">
                            <div id="valid">
                                   <p> Please enter a valid input</p>
-                                  <button  id="goback"> GO BACK</button>
+                                  <button id="goBack"> GO BACK</button>
                            </div> 
+                        </div>
+                           <div class="overlay"></div>
         </section>
         <section class="container-2">
             <div class="text-container">

@@ -29,7 +29,6 @@ main{
 .container-1{
     display: block;
     width: 50%;
-    max-width: 50%;
     height: 100%;
     margin-left: 1.5rem;
     /* border: 2px solid; */
@@ -244,25 +243,45 @@ button{
     cursor: pointer;
 }
 
+.modal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -300%);
+    transition: transform 0.6s ; 
+    z-index: 20;
+    text-align: center;
+}
 #valid{
-  position: absolute;
-  top: 0;
-  left: 0;
-  border: 2px solid;
   z-index: 10;
  margin-top: 4rem;
  margin-left: 3rem;
  height: 40vh;
- width: 40%;
- display: none;
+ width: 30vw;
+ display: flex;
  flex-direction: column;
  justify-content: center;
  align-items: center;
   background-color: hsl(202, 55%, 16%);
   color: white;
   font-weight: 900;
-  transition: 2s;
+  
+ 
 }
+ .overlay{
+ display: none;
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background-color: rgba(0,0,0,0.5);
+transition: 0.6s;
+}
+    
 
 
  .container-2{
@@ -332,3 +351,46 @@ button{
     font-weight: bold;
     color: hsl(0, 0%, 100%);
 }
+
+@media screen and (max-width: 765px) {
+  
+    main{
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+     }
+
+     .butcal{
+        width: 50vw;
+        padding: 20px;
+     }
+ 
+     .container-1{
+         width: 100%;
+     }
+   .mortage-team-flex{
+    margin-inline-end: 150px;
+   }
+   .mortage-team-input-style-1{
+        background: transparent;  
+     
+   }
+   .mortage-team-input-style-1 input{
+    background: transparent;  
+    width: 10vw;
+ 
+}
+   .container-2 {
+    width: 100%;
+    border-radius: 26px 26px 0 0;
+   }
+   .mortage-team-input-style-2 {
+    width: fit-content;
+    margin-left: 1.6rem;
+   }
+
+   .inner-mortage-team-input-style input {
+    width: 10vw;
+   }
+}
+  
