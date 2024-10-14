@@ -358,7 +358,7 @@ transition: 0.6s;
         display: flex;
         flex-direction: column;
         width: 100%;
-        padding-left: 3rem;
+        padding-left: 0.3rem;
      }
 
      .butcal{
