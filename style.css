@@ -1,3 +1,30 @@
+:root{
+
+
+    --background : hsl(202, 86%, 94%);
+    --background_overall : #fff;
+    --inner_background :  hsl(202, 55%, 16%);
+    --bold_colors: hsl(202, 55%, 16%);
+    --light_colors :hsl(200, 26%, 54%);
+    --input_background :  hsl(202, 86%, 94%);
+     --gold : hsl(61, 70%, 52%);
+     --text : #fff;
+     --overlay :rgba(0,0,0,0.5);
+}
+
+
+.darkmode {
+    
+    --background : hsl(0, 0%, 0%);
+    --background_overall : hsl(0, 0%, 30%);
+    --bold_colors: hsl(201, 68%, 93%);
+    --light_colors :hsl(200, 88%, 3%);
+    --input_background :  hsl(0, 0%, 30%);
+     --gold : hsl(61, 88%, 28%);
+     --text : #fff;
+}
+
+
 *{
     margin: 0;
     padding: 0;
@@ -11,9 +38,33 @@ body{
     align-items: center;
     width: 100%;
     min-height: 100vh;
-    background: hsl(202, 86%, 94%) ;
+    background:var(--background) ;
+    transition: all 1s ease-in-out;
+
+}
+.theme{
+    position: absolute;
+    top:2rem;
+    right: 2rem;
+    display: flex;
+    align-items: center;
+    color: var(--text);
+    padding: 20px;
+    cursor: pointer;
+    background-color: var(--gold);
+    border-radius: 20px;
+}
+.theme :nth-child(1){
+    display: none;
 }
 
+.darkmode .theme :nth-child(1){
+    display: block;
+}
+
+.darkmode .theme :nth-child(2){
+    display: none;
+}
 main{
     display: flex;
     justify-content: center;
@@ -22,7 +73,7 @@ main{
     width: 850px;
     height: fit-content;
     border-radius: 20px;
-    background:  hsl(0, 0%, 100%);
+    background:  var(--background_overall);
   
 }
 
@@ -44,13 +95,13 @@ main{
 #mortage-calcultor h3{
     font-size: 20px;
     font-weight: 900;
-    color: hsl(202, 55%, 16%);
+    color: var(--bold_colors);
 }
 #mortage-calcultor #clear{
     font-size: 14px;
     font-weight: 600;
-    color: hsl(200, 26%, 54%);
-    border-bottom: 2px solid hsl(201, 57%, 75%);
+    color:var(--light_colors);
+    border-bottom: 2px solid var(--input_background);
     margin-right: 15px;
     cursor: pointer;
 }
@@ -68,22 +119,22 @@ main{
 .mortage-amount p{
     font-size: 13px;
     font-weight: 700;
-    color: hsl(203, 26%, 57%);
+    color:var(--bold_colors);
 }
 
 .input-style{
     display: flex;
-    border: 1px solid hsl(200, 24%, 40%);
+    border: 1px solid var(--bold_colors);
     width: 85%;
     height: 5vh;
     border-radius: 4px;
 }
 .input-style-1{
     width: 35px;
-    background-color: hsl(202, 86%, 94%);
+    background-color: var(--input_background);
     text-align: center;
     padding-top: 8px;
-    color:hsl(200, 26%, 54%) ;
+    color:var(--light_colors);
     font-weight: bold;
 }
 .input-style-2 input{
@@ -92,7 +143,8 @@ main{
     padding-top: 7px;
     outline: none;
     font-weight: bold;
-    color:hsl(200, 26%, 54%) ;
+    color:var(--light_colors);
+    background-color: var(--background_overall);
 }
 
 .mortage-team-flex{
@@ -106,12 +158,12 @@ main{
 .inner-mortage-team-flex p{
     font-size: 13px;
     font-weight: 500;
-    color: hsl(200, 24%, 40%);
+    color: var(--light_colors);
     margin-right: 1rem;
     margin-bottom: 10px;
 }
 .mortage-team-input-style{
-    border: 2px solid hsl(203, 41%, 72%);
+    border: 1px solid var(--bold_colors);
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -128,16 +180,17 @@ main{
     padding-left: 8px;
     outline: none;
     font-weight: bold;
-    color:hsl(199, 22%, 30%) ;
+    color:var(--light_colors);
+    background-color: var(--background_overall);
 }
 
 
 .mortage-team-input-style-2{
     width: 58px;
-    background-color: hsl(202, 86%, 94%);
+    background-color:var(--input_background);
     text-align: center;
     padding-top: 3px;
-    color:hsl(200, 26%, 54%) ;
+    color:var(--light_colors) ;
     font-weight: bold;
     font-size: 17px;
    
@@ -149,19 +202,20 @@ main{
 .inner-mortage-team-flex-2 p{
     font-size: 13px;
     font-weight: 500;
-    color: hsl(200, 24%, 40%);
+    color: var(--light_colors);
     margin-right: 1rem;
     margin-bottom: 10px;
 }
 
 .inner-mortage-team-input-style{
-    border: 2px solid hsl(203, 41%, 72%);
+    border: 1px solid var(--bold_colors);
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     width:145px; 
     line-height: 2rem;
     border-radius: 5px;
+    
     
 }
 
@@ -173,15 +227,16 @@ main{
     padding-left: 8px;
     outline: none;
     font-weight: bold;
-    color:hsl(201, 22%, 34%) ;
+    color:var(--bold_colors);
+    background-color: var(--background_overall);
 }
 
 .inner-mortage-team-input-style-2{
     width: 58px;
-    background-color: hsl(202, 86%, 94%);
+    background-color: var(--input_background);
     text-align: center;
     padding-top: 3px;
-    color:hsl(200, 26%, 54%) ;
+    color:var(--light_colors) ;
     font-weight: bold;
 }
 
@@ -196,7 +251,7 @@ main{
 .Mortgage-type p{
     font-size: 13px;
     font-weight: 700;
-    color: hsl(203, 21%, 51%);
+    color: var(--bold_colors);
     margin-bottom: 3px;
 }
 
@@ -204,7 +259,7 @@ main{
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    border: 1px solid hsl(200, 24%, 40%);
+    border: 1px solid var(--bold_colors);
     width: 85%;
     height: 5vh;
     border-radius: 4px;
@@ -219,7 +274,7 @@ main{
 
 
 .mortage-radio-style label{
-    color: hsl(202, 55%, 16%);
+    color:var(--bold_colors);
     font-weight: 900;
     font-size: 12px;
 }
@@ -232,9 +287,9 @@ button{
     justify-content: center;
     margin-top:2rem ;
     border-radius: 20px;
-    background: hsl(61, 70%, 52%);
+    background:var(--gold);
     border: none;
-    color: hsl(202, 55%, 16%);
+    color:var(--bold_colors);
     height: 5.5vh;
     width: 15vw;
     font-size: 13px;
@@ -265,8 +320,8 @@ button{
  flex-direction: column;
  justify-content: center;
  align-items: center;
-  background-color: hsl(202, 55%, 16%);
-  color: white;
+  background-color: var(--inner_background);
+  color:var(--text);
   font-weight: 900;
   
  
@@ -278,7 +333,7 @@ button{
  left: 0;
  width: 100%;
  height: 100%;
- background-color: rgba(0,0,0,0.5);
+ background-color: var(--overlay);
 transition: 0.6s;
 }
     
@@ -288,7 +343,7 @@ transition: 0.6s;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: hsl(202, 55%, 16%);
+    background:var(--inner_background);
     height: 68vh;
     width: 50%;
     border-radius:0 20px 20px 60px;
@@ -304,21 +359,21 @@ transition: 0.6s;
 }
 
 .text-container h4{
-    color: hsl(0, 0%, 100%);
+    color: var(--text);
     margin-bottom: 0.8rem;
 }
 
 .text-container p{
     font-size: 13px;
     font-weight: 300;
-    color:hsl(0, 11%, 91%) ;
+    color:var(--text) ;
 }
 
 
 .result-container{
     margin-top: 2rem;
     border: none;
-    box-shadow: 3px 5px hsl(61, 70%, 52%);
+    box-shadow: 3px 5px var(--gold);
     width: 85%;
     height: 35vh;
     border-radius: 10px;
@@ -328,21 +383,21 @@ transition: 0.6s;
 
 .result-container .monthly{
     font-size: 13px;
-    color:hsl(0, 25%, 92%) ;
+    color:var(--text) ;
     margin-bottom: 0.8rem;
 }
 
 .result h2{
     font-size: 30px;
-    color: hsl(61, 70%, 52%);
+    color: var(--gold);
     margin-bottom:3rem ;
-    border-bottom: 0.5px solid hsl(202, 44%, 96%);
+    border-bottom: 0.5px solid var(--input_background);
     height: 10vh;
     width: 15vw;
 }
 
 .Total{
-    color: hsl(0, 25%, 92%); 
+    color: var(--text); 
     font-size: 13px
 }
 
@@ -401,6 +456,14 @@ transition: 0.6s;
    }
    #goBack{
     width: 40vw;
+   }
+   .theme{
+    top: 1rem;
+    right: 0;
+    padding: 10px;
+   }
+   #mortage-calcultor #clear{
+    margin-right: 10rem;
    }
 }
   

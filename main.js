@@ -1,3 +1,21 @@
+let theme = document.querySelector('.theme');
+console.log(theme)
+
+
+theme.addEventListener('click', ()=>{
+    document.body.classList.contains('darkmode') ? deactivateDarkMode():activateDarkMode() 
+
+
+})
+
+const activateDarkMode = ()=>{
+    document.body.classList.add('darkmode')
+}
+
+const deactivateDarkMode = ()=>{
+    document.body.classList.remove('darkmode')
+}
+
 function mortgageCal() {
     let mortgageAmount = parseFloat(document.querySelector(".input-style-2 input").value.replace(/,/g, ""));
     let mortgageYears = parseFloat( document.querySelector(".mortage-team-input-style-1 input").value );
@@ -59,16 +77,25 @@ document.querySelector("#goBack").addEventListener('click', ()=>{
 
 }
 
+let clear = document.querySelector('#clear')
+console.log(clear)
 
-
-const clear = () => {
+clear.addEventListener('click', ()=>{
     console.log("Clear function triggered");
     let monthlyPayment = document.querySelector(".result h2");
     let yearlyPayment = document.querySelector(".yearly-result p");
 
     monthlyPayment.textContent = "$000,000,000";
     yearlyPayment.textContent = "$000,000,000";
-};
+     mortgageYears.textContent = "00"; 
+      mortgageIntrest.textContent = "00";
+      mortgageAmount.textContent = "000,000";
+})
+
+
+
+
+
 
 
 
