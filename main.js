@@ -16,11 +16,24 @@ const deactivateDarkMode = ()=>{
     document.body.classList.remove('darkmode')
 }
 
+
+
+
+
+
+// get the output of the caculated value
+let monthlyPayment = document.querySelector(".result h2");
+let yearlyPayment = document.querySelector(".yearly-result p");
+
+
+
+//  calculation function
 function mortgageCal() {
-    let mortgageAmount = parseFloat(document.querySelector(".input-style-2 input").value.replace(/,/g, ""));
-    let mortgageYears = parseFloat( document.querySelector(".mortage-team-input-style-1 input").value );
-    let mortgageIntrest = parseFloat( document.querySelector(".inner-mortage-team-input-style-1 input").value );
-    let mortgageType = document.querySelector( 'input[name="Mortgage"]:checked' ).value;
+  // get input value
+let mortgageAmount = parseFloat(document.querySelector(".input-style-2 input").value.replace(/,/g, ""));
+let mortgageYears = parseFloat( document.querySelector(".mortage-team-input-style-1 input").value );
+let mortgageIntrest = parseFloat( document.querySelector(".inner-mortage-team-input-style-1 input").value );
+let mortgageType = document.querySelector( 'input[name="Mortgage"]:checked' ).value;
 
     // Calculate monthly interest
     let monthlyInterest = mortgageIntrest / 12 / 100;
@@ -50,14 +63,11 @@ document.querySelector("#goBack").addEventListener('click', ()=>{
 
     let monthlyMortgagePayment;
     let yearlymortgagePayment;
-    let monthlyPayment = document.querySelector(".result h2");
-    let yearlyPayment = document.querySelector(".yearly-result p");
+    
 
     if (mortgageType === "Repayment") {
         // Calculate the monthly mortgage payment for a repayment mortgage
-        monthlyMortgagePayment =
-            (mortgageAmount * monthlyInterest) /
-            (1 - Math.pow(1 + monthlyInterest, -totalPayments));
+        monthlyMortgagePayment = (mortgageAmount * monthlyInterest) / (1 - Math.pow(1 + monthlyInterest, -totalPayments));
     } else if (mortgageType === "Interest") {
         // Calculate the monthly payment for an interest-only mortgage
         monthlyMortgagePayment = mortgageAmount * monthlyInterest;
@@ -68,11 +78,7 @@ document.querySelector("#goBack").addEventListener('click', ()=>{
     // Display the results
     monthlyPayment.textContent = "$" + monthlyMortgagePayment;
     yearlyPayment.textContent = "$" + yearlymortgagePayment;
-
-
-
-
-
+    console.log(yearlyPayment)
 
 
 }
@@ -81,16 +87,18 @@ let clear = document.querySelector('#clear')
 console.log(clear)
 
 clear.addEventListener('click', ()=>{
-    console.log("Clear function triggered");
-    let monthlyPayment = document.querySelector(".result h2");
-    let yearlyPayment = document.querySelector(".yearly-result p");
-
+    let mortgageAmount = document.querySelector(".input-style-2 input").value = ""
+    let mortgageYears =  document.querySelector(".mortage-team-input-style-1 input").value  = ""
+    let mortgageIntrest =  document.querySelector(".inner-mortage-team-input-style-1 input").value = ""
+    
     monthlyPayment.textContent = "$000,000,000";
     yearlyPayment.textContent = "$000,000,000";
-     mortgageYears.textContent = "00"; 
-      mortgageIntrest.textContent = "00";
-      mortgageAmount.textContent = "000,000";
+
+
+   
 })
+
+
 
 
 

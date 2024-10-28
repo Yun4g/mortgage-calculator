@@ -193,6 +193,7 @@ main{
     color:var(--light_colors) ;
     font-weight: bold;
     font-size: 17px;
+    transform: translateX(-8px);
    
 }
 
@@ -238,6 +239,7 @@ main{
     padding-top: 3px;
     color:var(--light_colors) ;
     font-weight: bold;
+    margin-right: 40px;
 }
 
 
