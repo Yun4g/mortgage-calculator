@@ -193,7 +193,7 @@ main{
     color:var(--light_colors) ;
     font-weight: bold;
     font-size: 17px;
-    transform: translateX(-8px);
+    transform: translateX(-1px);
    
 }
 
@@ -233,13 +233,13 @@ main{
 }
 
 .inner-mortage-team-input-style-2{
-    width: 58px;
+    width: 88px;
     background-color: var(--input_background);
     text-align: center;
-    padding-top: 3px;
+    padding: 2px;
     color:var(--light_colors) ;
     font-weight: bold;
-    margin-right: 40px;
+   
 }
 
 
@@ -444,11 +444,14 @@ transition: 0.6s;
    }
    .mortage-team-input-style-2 {
     width: fit-content;
-    margin-left: 1.9rem;
+    margin-left: 2rem;
+
    }
 
    .inner-mortage-team-input-style input {
-    width: 10vw;
+    width: 12vw;
+    
+    margin-left: 1.5rem;
    }
 
    #valid{

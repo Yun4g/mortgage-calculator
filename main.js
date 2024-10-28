@@ -1,3 +1,5 @@
+localStorage(value, mortgageCal)
+
 let theme = document.querySelector('.theme');
 console.log(theme)
 
